@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otimizador</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+padding:20px;
+}
+
+#login{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.login-box{
+width:320px;
+background:#111;
+padding:25px;
+border-radius:20px;
+border:1px solid #00ff88;
+text-align:center;
+}
+
+.login-box h1{
+color:#00ff88;
+margin-bottom:20px;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border:none;
+border-radius:10px;
+background:#222;
+color:#fff;
+}
+
+.login-box button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#00ff88;
+color:#000;
+font-weight:bold;
+}
+
+#painel{
+display:none;
+}
+
+.categoria{
+background:#111;
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+h2{
+color:#00ff88;
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.opcao{
+background:#1a1a1a;
+padding:15px;
+border-radius:12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.switch{
+position:relative;
+display:inline-block;
+width:50px;
+height:26px;
+}
+
+.switch input{
+opacity:0;
+width:0;
+height:0;
+}
+
+.slider{
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:#555;
+border-radius:20px;
+}
+
+.slider:before{
+content:"";
+position:absolute;
+height:20px;
+width:20px;
+left:3px;
+bottom:3px;
+background:white;
+border-radius:50%;
+}
+
+input:checked + .slider{
+background:#00ff88;
+}
+
+input:checked + .slider:before{
+transform:translateX(24px);
+}
+
+.fps-btn{
+padding:15px;
+border:none;
+border-radius:12px;
+background:#222;
+color:white;
+font-weight:bold;
+}
+
+.ativo{
+background:#00ff88;
+color:black;
+}
+
+.botao{
+width:100%;
+padding:18px;
+border:none;
+border-radius:15px;
+background:#00ff88;
+color:black;
+font-size:20px;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div id="login">
+<div class="login-box">
+
+<h1>🔒 LOGIN</h1>
+
+<input type="text" id="usuario" placeholder="Usuário">
+
+<input type="password" id="senha" placeholder="Senha">
+
+<button onclick="entrar()">ENTRAR</button>
+
+</div>
+</div>
+
+<div id="painel">
+
+<div class="categoria">
+<h2>🎯 MIRA</h2>
+
+<div class="grid">
+
+<div class="opcao">
+Calibrar Sensi
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+<div class="opcao">
+Mira Estável
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+<div class="opcao">
+Precisão
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+</div>
+</div>
+
+<div class="categoria">
+<h2>⚡ FPS</h2>
+
+<div class="grid">
+
+<button class="fps-btn" onclick="fps(this)">30 FPS</button>
+<button class="fps-btn" onclick="fps(this)">60 FPS</button>
+<button class="fps-btn" onclick="fps(this)">120 FPS</button>
+
+</div>
+
+</div>
+
+<div class="categoria">
+<h2>🚀 DESEMPENHO</h2>
+
+<div class="grid">
+
+<div class="opcao">
+RAM Boost
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+<div class="opcao">
+CPU Turbo
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+<div class="opcao">
+GPU Boost
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+<div class="opcao">
+Modo Competitivo
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+</div>
+</div>
+
+<button class="botao">
+🚀 OTIMIZAR AGORA
+</button>
+
+</div>
+
+<script>
+
+function entrar(){
+
+var usuario = document.getElementById("usuario").value;
+var senha = document.getElementById("senha").value;
+
+if(usuario === "1" && senha === "1"){
+
+document.getElementById("login").style.display = "none";
+document.getElementById("painel").style.display = "block";
+
+}else{
+
+alert("Usuário ou senha incorretos!");
+
+}
+
+}
+
+function fps(botao){
+
+document.querySelectorAll(".fps-btn").forEach(function(btn){
+btn.classList.remove("ativo");
+});
+
+botao.classList.add("ativo");
+
+}
+
+</script>
+
+</body>
+</html>
