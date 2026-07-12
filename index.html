@@ -1,0 +1,168 @@
+<div class="categoria">
+<h2>🎯 MIRA</h2>
+
+<div class="grid">
+
+<div class="opcao">
+Calibrar Sensi
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+<div class="opcao">
+Mira Estável
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+<div class="opcao">
+Precisão
+<label class="switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+
+</div>
+</div>
+
+<div class="categoria">
+<h2>⚡ FPS</h2>
+
+<div class="grid">
+
+<button class="fps-btn" onclick="selecionarFPS(this)">
+30 FPS
+</button>
+
+<button class="fps-btn" onclick="selecionarFPS(this)">
+60 FPS
+</button>
+
+<button class="fps-btn" onclick="selecionarFPS(this)">
+120 FPS
+</button>
+
+</div>
+
+<p id="fpsStatus" style="
+margin-top:15px;
+text-align:center;
+font-weight:bold;
+color:#00ff88;">
+Nenhum FPS selecionado
+</p>
+
+</div>
+
+<div class="categoria">
+<h2>⚡ DESEMPENHO</h2>
+
+<div class="grid">
+
+<div class="opcao">RAM Boost<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">CPU Turbo<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">GPU Boost<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Modo Competitivo<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Modo Desempenho<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Anti Travamento<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">FPS Estável<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Renderização Rápida<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Boost Extremo<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+</div>
+</div>
+
+<div class="categoria">
+<h2>📶 REDE</h2>
+
+<div class="grid">
+
+<div class="opcao">Ping Estável<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Prioridade de Rede<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Otimização Wi-Fi<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Redução de Latência<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Conexão Inteligente<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Aceleração de Pacotes<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Estabilidade Online<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+</div>
+</div>
+
+<div class="categoria">
+<h2>📱 SISTEMA</h2>
+
+<div class="grid">
+
+<div class="opcao">Limpeza de Cache<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Limpeza Profunda<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Otimização de Toque<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Taxa de Toque 140Hz<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Modo Gamer<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+<div class="opcao">Otimização Total<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+
+</div>
+</div>
+
+<button class="botao" onclick="ativarTudo()">
+🚀 OTIMIZAR AGORA
+</button>
+
+<script>
+
+function selecionarFPS(botao){
+
+document.querySelectorAll('.fps-btn').forEach(btn=>{
+btn.classList.remove('ativo');
+});
+
+botao.classList.add('ativo');
+
+document.getElementById('fpsStatus').innerText =
+'FPS Selecionado: ' + botao.innerText;
+
+}
+
+function ativarTudo(){
+
+document.querySelectorAll('input[type="checkbox"]').forEach(
+checkbox => checkbox.checked = true
+);
+
+document.querySelectorAll('.fps-btn').forEach(btn=>{
+btn.classList.remove('ativo');
+});
+
+document.querySelector('.fps-btn:last-child').classList.add('ativo');
+
+document.getElementById('fpsStatus').innerText =
+'FPS Selecionado: 120 FPS';
+
+alert('Otimização aplicada com sucesso!');
+
+}
+
+</script>
