@@ -1,146 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sensi Calibrada</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:url("fundo.jpg") no-repeat center center fixed;
-background-size:cover;
-padding:20px;
-color:white;
-}
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.75);
-z-index:-1;
-}
-
-.categoria{
-background:rgba(0,0,0,.75);
-border-radius:25px;
-padding:25px;
-margin-bottom:25px;
-backdrop-filter:blur(8px);
-}
-
-h2{
-color:#00ff88;
-font-size:22px;
-margin-bottom:20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-}
-
-.opcao{
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:#1d1d1d;
-padding:15px;
-border-radius:15px;
-font-size:18px;
-}
-
-.switch{
-position:relative;
-display:inline-block;
-width:60px;
-height:30px;
-}
-
-.switch input{
-opacity:0;
-width:0;
-height:0;
-}
-
-.slider{
-position:absolute;
-cursor:pointer;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background:#666;
-transition:.4s;
-border-radius:30px;
-}
-
-.slider:before{
-position:absolute;
-content:"";
-height:22px;
-width:22px;
-left:4px;
-bottom:4px;
-background:white;
-transition:.4s;
-border-radius:50%;
-}
-
-input:checked + .slider{
-background:#00ff88;
-}
-
-input:checked + .slider:before{
-transform:translateX(30px);
-}
-
-.fps-btn{
-padding:18px;
-border:none;
-border-radius:15px;
-background:#1d1d1d;
-color:white;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-}
-
-.fps-btn.ativo{
-background:#00ff88;
-color:black;
-}
-
-.botao{
-width:100%;
-padding:18px;
-border:none;
-border-radius:20px;
-background:#00ff88;
-color:black;
-font-size:22px;
-font-weight:bold;
-cursor:pointer;
-}
-
-</style>
-</head>
-
-<body>
-
 <div class="categoria">
 <h2>🎯 MIRA</h2>
 
@@ -174,7 +31,6 @@ Precisão
 </div>
 
 <div class="categoria">
-
 <h2>⚡ FPS</h2>
 
 <div class="grid">
@@ -193,6 +49,14 @@ Precisão
 
 </div>
 
+<p id="fpsStatus" style="
+margin-top:15px;
+text-align:center;
+font-weight:bold;
+color:#00ff88;">
+Nenhum FPS selecionado
+</p>
+
 </div>
 
 <div class="categoria">
@@ -200,68 +64,23 @@ Precisão
 
 <div class="grid">
 
-<div class="opcao">RAM Boost
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">RAM Boost<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">CPU Turbo
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">CPU Turbo<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">GPU Boost
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">GPU Boost<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Modo Competitivo
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Modo Competitivo<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Modo Desempenho
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Modo Desempenho<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Anti Travamento
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Anti Travamento<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">FPS Estável
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">FPS Estável<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Renderização Rápida
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Renderização Rápida<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Boost Extremo
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Boost Extremo<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
 </div>
 </div>
@@ -271,54 +90,19 @@ Precisão
 
 <div class="grid">
 
-<div class="opcao">Ping Estável
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Ping Estável<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Prioridade de Rede
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Prioridade de Rede<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Otimização Wi-Fi
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Otimização Wi-Fi<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Redução de Latência
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Redução de Latência<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Conexão Inteligente
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Conexão Inteligente<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Aceleração de Pacotes
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Aceleração de Pacotes<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Estabilidade Online
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Estabilidade Online<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
 </div>
 </div>
@@ -328,47 +112,17 @@ Precisão
 
 <div class="grid">
 
-<div class="opcao">Limpeza de Cache
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Limpeza de Cache<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Limpeza Profunda
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Limpeza Profunda<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Otimização de Toque
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Otimização de Toque<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Taxa de Toque 140Hz
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Taxa de Toque 140Hz<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Modo Gamer
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Modo Gamer<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
-<div class="opcao">Otimização Total
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
+<div class="opcao">Otimização Total<label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
 
 </div>
 </div>
@@ -387,6 +141,9 @@ btn.classList.remove('ativo');
 
 botao.classList.add('ativo');
 
+document.getElementById('fpsStatus').innerText =
+'FPS Selecionado: ' + botao.innerText;
+
 }
 
 function ativarTudo(){
@@ -401,11 +158,11 @@ btn.classList.remove('ativo');
 
 document.querySelector('.fps-btn:last-child').classList.add('ativo');
 
+document.getElementById('fpsStatus').innerText =
+'FPS Selecionado: 120 FPS';
+
 alert('Otimização aplicada com sucesso!');
 
 }
 
 </script>
-
-</body>
-</html>
