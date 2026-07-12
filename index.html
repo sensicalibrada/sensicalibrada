@@ -3,35 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painel</title>
 
 <style>
 body{
-    font-family: Arial, sans-serif;
+    background:#111;
     color:white;
-    margin:0;
+    font-family:Arial;
     padding:20px;
-    background:url("fundo.jpg") no-repeat center center fixed;
-    background-size:cover;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.75);
-    z-index:-1;
 }
 
 .categoria{
-    background:rgba(0,0,0,0.65);
-    backdrop-filter:blur(5px);
+    background:#1a1a1a;
+    padding:20px;
     border-radius:15px;
-    padding:15px;
-    margin-bottom:20px;
 }
 
 h2{
@@ -44,80 +28,21 @@ h2{
     gap:10px;
 }
 
-.opcao{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,0.05);
-    padding:12px;
-    border-radius:10px;
-}
-
-.switch{
-    position:relative;
-    display:inline-block;
-    width:50px;
-    height:26px;
-}
-
-.switch input{
-    opacity:0;
-    width:0;
-    height:0;
-}
-
-.slider{
-    position:absolute;
-    cursor:pointer;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background:#555;
-    transition:.4s;
-    border-radius:26px;
-}
-
-.slider:before{
-    position:absolute;
-    content:"";
-    height:20px;
-    width:20px;
-    left:3px;
-    bottom:3px;
-    background:white;
-    transition:.4s;
-    border-radius:50%;
-}
-
-input:checked + .slider{
-    background:#00ff88;
-}
-
-input:checked + .slider:before{
-    transform:translateX(24px);
-}
-
 .fps-btn{
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#00ff88;
-    color:black;
-    font-weight:bold;
-    width:100%;
-}
-
-.botao{
-    width:100%;
     padding:15px;
     border:none;
-    border-radius:12px;
-    background:#00ff88;
-    color:black;
+    border-radius:10px;
+    background:#333;
+    color:white;
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
+    transition:0.3s;
+}
+
+.fps-btn.ativo{
+    background:#00ff88;
+    color:black;
 }
 </style>
 </head>
@@ -125,104 +50,39 @@ input:checked + .slider:before{
 <body>
 
 <div class="categoria">
-<h2>🎯 MIRA</h2>
-<div class="grid">
 
-<div class="opcao">
-<span>Calibrar Sensi</span>
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
-
-<div class="opcao">
-<span>Mira Estável</span>
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
-
-<div class="opcao">
-<span>Precisão</span>
-<label class="switch">
-<input type="checkbox">
-<span class="slider"></span>
-</label>
-</div>
-
-</div>
-</div>
-
-<div class="categoria">
 <h2>⚡ FPS</h2>
 
 <div class="grid">
-<button class="fps-btn">30 FPS</button>
-<button class="fps-btn">60 FPS</button>
-<button class="fps-btn">120 FPS</button>
-</div>
 
-</div>
-
-<div class="categoria">
-<h2>⚡ DESEMPENHO</h2>
-<div class="grid">
-
-<div class="opcao"><span>RAM Boost</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>CPU Turbo</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>GPU Boost</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Modo Competitivo</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Modo Desempenho</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Anti Travamento</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>FPS Estável</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Renderização Rápida</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Boost Extremo</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-
-</div>
-</div>
-
-<div class="categoria">
-<h2>📶 REDE</h2>
-<div class="grid">
-
-<div class="opcao"><span>Ping Estável</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Prioridade de Rede</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Otimização Wi-Fi</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Redução de Latência</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Conexão Inteligente</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Aceleração de Pacotes</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Estabilidade Online</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-
-</div>
-</div>
-
-<div class="categoria">
-<h2>📱 SISTEMA</h2>
-<div class="grid">
-
-<div class="opcao"><span>Limpeza de Cache</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Limpeza Profunda</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Otimização de Toque</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Taxa de Toque 140Hz</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Modo Gamer</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-<div class="opcao"><span>Otimização Total</span><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
-
-</div>
-</div>
-
-<button class="botao" onclick="ativarTudo()">
-🚀 OTIMIZAR AGORA
+<button class="fps-btn" onclick="selecionarFPS(this)">
+30 FPS
 </button>
 
+<button class="fps-btn" onclick="selecionarFPS(this)">
+60 FPS
+</button>
+
+<button class="fps-btn" onclick="selecionarFPS(this)">
+120 FPS
+</button>
+
+</div>
+
+</div>
+
 <script>
-function ativarTudo(){
-document.querySelectorAll('input[type="checkbox"]').forEach(
-checkbox => checkbox.checked = true
-);
-alert("Otimização aplicada com sucesso!");
+
+function selecionarFPS(botao){
+
+document.querySelectorAll('.fps-btn').forEach(btn=>{
+btn.classList.remove('ativo');
+});
+
+botao.classList.add('ativo');
+
 }
+
 </script>
 
 </body>
