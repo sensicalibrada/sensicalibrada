@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Otimização</title>
-
 <style>
 *{
     margin:0;
@@ -12,7 +11,6 @@
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
-
 body{
     background:#000;
     color:#fff;
@@ -21,7 +19,6 @@ body{
     justify-content:center;
     align-items:center;
 }
-
 #login, #painel{
     background:#111;
     width:350px;
@@ -29,16 +26,13 @@ body{
     border-radius:20px;
     text-align:center;
 }
-
 #painel{
     display:none;
 }
-
 h1{
     color:#00ff88;
     margin-bottom:20px;
 }
-
 input{
     width:100%;
     padding:12px;
@@ -48,7 +42,6 @@ input{
     background:#222;
     color:white;
 }
-
 button{
     width:100%;
     padding:12px;
@@ -60,7 +53,6 @@ button{
     font-weight:bold;
     cursor:pointer;
 }
-
 .opcao{
     background:#1a1a1a;
     padding:12px;
@@ -70,7 +62,6 @@ button{
     justify-content:space-between;
     align-items:center;
 }
-
 .switch{
     width:50px;
     height:25px;
@@ -78,84 +69,65 @@ button{
 </style>
 </head>
 <body>
-
 <div id="login">
     <h1>LOGIN</h1>
-
     <form id="loginForm">
         <input type="text" id="usuario" placeholder="Usuário">
         <input type="password" id="senha" placeholder="Senha">
         <button type="submit">ENTRAR</button>
     </form>
 </div>
-
 <div id="painel">
     <h1>OTIMIZAÇÃO</h1>
-
     <div class="opcao">
         <span>Calibrar Sensi</span>
         <input type="checkbox" class="switch">
     </div>
-
     <div class="opcao">
         <span>Mira Estável</span>
         <input type="checkbox" class="switch">
     </div>
-
     <div class="opcao">
         <span>120 FPS</span>
         <input type="checkbox" class="switch">
     </div>
-
     <div class="opcao">
         <span>RAM Boost</span>
         <input type="checkbox" class="switch">
     </div>
-
     <div class="opcao">
         <span>Reduzir Lag</span>
         <input type="checkbox" class="switch">
     </div>
-
     <div class="opcao">
         <span>Otimizar Toque</span>
         <input type="checkbox" class="switch">
     </div>
-
     <div class="opcao">
         <span>Melhorar Mira</span>
         <input type="checkbox" class="switch">
     </div>
-
     <div class="opcao">
         <span>Limpar Cache</span>
         <input type="checkbox" class="switch">
     </div>
-
     <button onclick="aplicar()">APLICAR CONFIGURAÇÕES</button>
 </div>
-
 <script>
 document.getElementById("loginForm").addEventListener("submit", function(e){
-
     e.preventDefault();
-
     let usuario = document.getElementById("usuario").value.trim();
     let senha = document.getElementById("senha").value.trim();
-
     if(usuario === "1" && senha === "1"){
         document.getElementById("login").style.display = "none";
         document.getElementById("painel").style.display = "block";
     }else{
         alert("Usuário ou senha incorretos");
     }
-
 });
-
 function aplicar(){
     alert("Configurações aplicadas com sucesso!");
 }
 </script>
-
 </body>
 </html>
